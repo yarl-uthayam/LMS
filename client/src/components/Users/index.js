@@ -34,6 +34,12 @@ export default function Users() {
       key: 'lastName',
       render: (text) => <a>{text}</a>,
     },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+      render: (text) => <a>{text}</a>,
+    },
   ];
   const getUsers = () => {
     getAllUsers().then((results) => setUsers(results));

@@ -16,11 +16,17 @@ export default function MainLayout({ children }) {
   return (
     <Layout className="layout" style={{ minHeight: '100vh' }}>
       <Header>
+        <Link to={'/books'} style={{ padding: '0px 3px' }}>
+          Books
+        </Link>
+        {/* <Link to={'/users'} style={{ padding: '0px 3px' }}>
+          Users
+        </Link> */}
         <div style={{ float: 'right', color: '#fff' }}>
           <Button style={{ marginLeft: 10 }}>Login</Button>
-          <Button style={{ marginLeft: 10 }} onClick={() => logout()}>
+          {/* <Button style={{ marginLeft: 10 }} onClick={() => logout()}>
             Logout
-          </Button>
+          </Button> */}
         </div>
       </Header>
       <Content

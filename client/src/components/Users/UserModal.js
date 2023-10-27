@@ -55,8 +55,8 @@ export default function UserModal({ state, onCancel, setState, getUsers }) {
           <Input />
         </Form.Item>
         <Form.Item
-          name="uniqueId"
-          label="UID"
+          name="firstName"
+          label="First Name"
           rules={[
             {
               required: true,
@@ -66,8 +66,8 @@ export default function UserModal({ state, onCancel, setState, getUsers }) {
           <Input />
         </Form.Item>
         <Form.Item
-          name="title"
-          label="Title"
+          name="lastName"
+          label="Last Name"
           rules={[
             {
               required: true,
@@ -78,8 +78,8 @@ export default function UserModal({ state, onCancel, setState, getUsers }) {
         </Form.Item>
 
         <Form.Item
-          name="author"
-          label="Author"
+          name="email"
+          label="Email"
           rules={[
             {
               required: true,
@@ -88,28 +88,7 @@ export default function UserModal({ state, onCancel, setState, getUsers }) {
         >
           <Input />
         </Form.Item>
-        <Form.Item
-          name="subject"
-          label="Subject"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="dateOfPublication"
-          label="Date Of Publication"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input type="date" />
-        </Form.Item>
+
         <Form.Item>
           <Space style={{ float: 'right' }}>
             <Button htmlType="reset">Reset</Button>
