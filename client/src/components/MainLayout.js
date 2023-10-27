@@ -19,9 +19,9 @@ export default function MainLayout({ children }) {
         <Link to={'/books'} style={{ padding: '0px 3px' }}>
           Books
         </Link>
-        {/* <Link to={'/users'} style={{ padding: '0px 3px' }}>
+        <Link to={'/users'} style={{ padding: '0px 3px' }}>
           Users
-        </Link> */}
+        </Link>
         <div style={{ float: 'right', color: '#fff' }}>
           <Button style={{ marginLeft: 10 }}>Login</Button>
           {/* <Button style={{ marginLeft: 10 }} onClick={() => logout()}>
