@@ -1,6 +1,12 @@
 const Book = require('../models/book.model');
 exports.getAllBooks = (req, res) => {
-  Book.find({})
+  const searchTerm = req.query.searchTerm;
+  Book.find({
+    $or: [
+      { author: { $regex: searchTerm } },
+      { title: { $regex: searchTerm } },
+    ],
+  })
     .then((books) => {
       res.status(200).json({
         message: 'Get all books Successfully',
@@ -8,7 +14,7 @@ exports.getAllBooks = (req, res) => {
       });
     })
     .catch((err) => {
-      return res.status(400).json({
+      return res.status(500).json({
         error: err,
       });
     });

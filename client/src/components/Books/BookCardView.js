@@ -7,13 +7,23 @@ import { getAllBooks } from '../../services/book.service';
 const { Meta } = Card;
 export default function BookCardView() {
   const [books, setBooks] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const getBooks = () => {
-    getAllBooks().then((results) => setBooks(results));
+    getAllBooks(searchInput).then((results) => setBooks(results));
   };
   useEffect(() => {
     getBooks();
-  }, []);
-  const onSearch = (value, _e, info) => console.log(info?.source, value);
+  }, [searchInput]);
+
+  const onSearch = (value, _e, info) => {
+    console.log(info?.source, value);
+    if (info?.source == 'input') {
+      setSearchInput(value);
+    }
+    if (info?.source == 'clear') {
+      setSearchInput('');
+    }
+  };
   return (
     <MainLayout>
       <Row className="">
@@ -21,7 +31,7 @@ export default function BookCardView() {
           <Flex>
             <Col md={12} style={{ alignSelf: 'flex-end' }}>
               <Search
-                placeholder="input search text"
+                placeholder="search with book's author or title"
                 onSearch={onSearch}
                 enterButton
                 allowClear

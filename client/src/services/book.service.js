@@ -1,8 +1,8 @@
 const { api } = require('./axios.service');
 
-const getAllBooks = () => {
+const getAllBooks = (searchTerm) => {
   return new Promise((resolve, reject) => {
-    api('GET', `books`, 'token', '', '')
+    api('GET', `books?searchTerm=${searchTerm}`, 'token', '', '')
       .then((response) => {
         resolve(response.data.results);
       })

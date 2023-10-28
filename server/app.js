@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 const bookRouter = require('./routes/book.route');
 const userRouter = require('./routes/user.route');
-app.use('/api', [bookRouter, userRouter]);
+const bookBorrowerRouter = require('./routes/bookBorrower.route');
+app.use('/api', [bookRouter, userRouter, bookBorrowerRouter]);
 
 module.exports = app;
